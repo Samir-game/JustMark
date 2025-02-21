@@ -25,6 +25,19 @@ async function handleCreatePin(req,res){
     }
 }
 
+async function handleGetAllPins(req,res){
+    try {
+        const pins= await Pin.find()
+        return res.status(200).json({
+            pins
+        })
+    } catch (error) {
+        console.log("error getting all the pins",error)
+    }
+}
+
+
 module.exports={
     handleCreatePin,
+    handleGetAllPins,
 }
