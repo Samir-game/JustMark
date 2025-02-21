@@ -3,9 +3,9 @@ const bcrypt= require("bcryptjs")
 
 
 async function handleSignUp(req,res){
-    const {name, email, password}= req.body;
+    const {userName, email, password}= req.body;
 
-    if(!name || !email || !password){
+    if(!userName || !email || !password){
         return res.status(400).json({
             msg:"Fill all the credentials"
         })
@@ -25,7 +25,7 @@ async function handleSignUp(req,res){
         const hashpassword= await bcrypt.hash(password,saltrounds)
 
         const user= await User.create({
-            name,
+            userName,
             email,
             password: hashpassword,
         })
