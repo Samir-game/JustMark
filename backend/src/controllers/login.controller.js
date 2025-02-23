@@ -25,6 +25,7 @@ async function handleLogin(req,res){
         }
 
         return res.status(200).json({
+            msg:"user logged in",
             userName:user.userName,
             email:user.email
         })
