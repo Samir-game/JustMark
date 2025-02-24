@@ -10,7 +10,7 @@ connectionDB()
 .then(()=>{
     console.log("connection to database completed");
     app.listen( process.env.PORT || 8001,()=>{
-        console.log("Server satated at Port: ",process.env.PORT)
+        console.log("Server started at Port: ",process.env.PORT)
     })
 })
 .catch((error)=>{
